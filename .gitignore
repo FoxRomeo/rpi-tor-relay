@@ -1,3 +1,5 @@
 fingerprint
 keys/*
 torrc
+build.sh
+Build.sh
