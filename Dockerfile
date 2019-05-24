@@ -1,4 +1,4 @@
-FROM balenalib/rpi-debian:stretch
+FROM debian:stretch
 MAINTAINER docker@intrepid.de
 
 RUN passwd -l root ; \
