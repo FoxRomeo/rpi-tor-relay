@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM arm32v6/bash:latest
 MAINTAINER docker@intrepid.de
 
 RUN passwd -l root ; \
