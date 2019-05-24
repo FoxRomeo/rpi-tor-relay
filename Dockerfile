@@ -1,12 +1,10 @@
-FROM arm32v6/bash:latest
+FROM arm32v6/alpine:latest
 MAINTAINER docker@intrepid.de
 
 RUN passwd -l root ; \
-    apt-get -y update && \
-    apt-get -y upgrade && \
-    apt-get -y install -qq --force-yes bash tor && \
-    apt-get clean -y && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+    apk --update --upgrade --no-cache add \
+      bash \
+      tor && \
     chown root:root /var/lib/tor -R
 
 # Run the command on container startup
