@@ -1,5 +1,6 @@
 # rpi-tor-releay
 Raspberry Pi (RPi) Docker container with tor proxy
+(arm32v6 aka RPi A/B/B+ and later)
 
 If you have a running instance copy your "torrc" and "fingerprint", if you don't have a fingerprint, set path to "rw" instead of "ro". "keys" must be "rw" all the time (even if emoty).
 
