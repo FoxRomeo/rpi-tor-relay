@@ -5,7 +5,7 @@ ENV TORVERSION=0.4.0.5
 # check https://www.torproject.org/download/tor/
 
 RUN passwd -l root ; \
-    apk add --update --upgrade --no-cache bash alpine-sdk libevent libevent-dev zlib zlib-dev openssl openssl-dev && \
+    apk add --update --upgrade --no-cache bash alpine-sdk libevent libevent-dev zlib zlib-dev openssl openssl-dev libgcc && \
     addgroup \
       -S -g 1000 \
       tor && \
