@@ -1,6 +1,6 @@
 pipeline {
         agent {
-                label 'arm32v6 && Docker && build-essential'
+                label 'arm32v6 && Docker'
         }
         triggers {
                 cron('H H(2-7) * * 2')
