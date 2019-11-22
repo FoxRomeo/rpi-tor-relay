@@ -9,7 +9,7 @@
 #  6 TARGETBATCH result was empty
 #  7 no ACTION type is set (build, push, all)
 
-if [-n "${DEBUG}" ]; then
+if [ -n "${DEBUG}" ]; then
  set -x
 fi
 
