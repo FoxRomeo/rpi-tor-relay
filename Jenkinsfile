@@ -2,6 +2,9 @@ pipeline {
         agent {
                 label 'arm32v6 && Docker'
         }
+	parameters {
+		string(name: 'OVERRIDE', defaultValue: 'latest', description: 'Version to use (leave "latest" to use latest release)', trim: true)
+	}
         triggers {
                 cron('H H(2-7) * * 2')
         }
