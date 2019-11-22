@@ -2,8 +2,6 @@ FROM arm32v6/alpine:latest
 MAINTAINER docker@intrepid.de
 
 ENV TORVERSION=<<TORVERSION>>
-# check and use latest (stable) version from: https://www.torproject.org/download/tor/
-# example: ENV TORVERSION=0.4.1.6
 
 RUN passwd -l root ; \
     apk add --update --upgrade --no-cache bash alpine-sdk libevent libevent-dev zlib zlib-dev openssl openssl-dev libgcc && \

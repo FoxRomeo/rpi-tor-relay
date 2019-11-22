@@ -14,6 +14,7 @@ pipeline {
                 timestamps()
         }
         environment {
+                DEBUG = "true"
                 REGISTRY = "intrepidde"
                 EMAIL_TO = 'olli.jenkins.prometheus@intrepid.de'
                 NAME = "rpi-tor-relay"
@@ -34,7 +35,7 @@ pipeline {
 			    ACTION = "build"
 			}
                         steps {
-                                sh './action.sh'
+                                sh '/bin/bash ./action.sh'
                         }
                 }
                 stage('Push') {
@@ -42,7 +43,7 @@ pipeline {
 			    ACTION = "push"
 			}
                         steps {
-                                sh './action.sh'
+                                sh '/bin/bash ./action.sh'
                         }
                 }
         }
