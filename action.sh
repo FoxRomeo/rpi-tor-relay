@@ -25,11 +25,11 @@ if [ -z "${REGISTRY}" ]; then
   exit 1
 fi
 
-if [ "${OVERRIDE}" != "latest" ] && [ -n "${SOFTWARESTRING}" ]; then
+if [ "${OVERRIDE}" != "latest" ] && [ -n "${OVERRIDE}" ] && [ -n "${SOFTWARESTRING}" ]; then
   SOFTWAREVERSION="${OVERRIDE}"
 fi
 
-if [ "${OVERRIDE}" != "latest" ]; then
+if [ "${OVERRIDE}" != "latest" ] && [ -n "${OVERRIDE}" ]; then
   TARGETVERSION="${OVERRIDE}"
 fi
 
