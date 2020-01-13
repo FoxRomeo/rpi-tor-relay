@@ -1,4 +1,5 @@
 # rpi-tor-releay
+<a href="https://hub.docker.com/r/intrepidde/rpi-tor-relay"><img src="https://img.shields.io/docker/pulls/intrepidde/rpi-privoxy.svg?style=plastic&logo=appveyor" alt="Docker pulls"/></a>
 Raspberry Pi (RPi) Docker container with tor proxy
 (arm32v6 aka RPi A/B/B+ and later)
 
