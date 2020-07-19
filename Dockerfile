@@ -24,7 +24,7 @@ RUN passwd -l root ; \
     ./configure --prefix=/usr --sysconfdir=/etc --with-tor-user=tor --with-tor-group=tor && \
     make install && \
     mkdir -p /var/lib/tor && \
-#    chown tor:tor /var/lib/tor -R && \
+    chown tor:tor /var/lib/tor -R && \
     cd / && \
     rm -rf /usr/src && \
     apk del alpine-sdk libevent-dev zlib-dev openssl-dev
@@ -32,8 +32,7 @@ RUN passwd -l root ; \
 EXPOSE 9001
 EXPOSE 9030
 
-#USER tor
-# Run the command on container startup
+USER tor
 CMD ["/usr/bin/tor", "--defaults-torrc", "/etc/tor/torrc", "--hush"]
 
 

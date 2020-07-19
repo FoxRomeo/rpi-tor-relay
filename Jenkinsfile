@@ -3,7 +3,7 @@ pipeline {
                 label 'arm32v6 && Docker'
         }
 	parameters {
-		string(name: 'OVERRIDE', defaultValue: '0.4.3.5', description: 'Version to use (leave "latest" to use latest release)', trim: true)
+		string(name: 'OVERRIDE', defaultValue: 'latest', description: 'Version to use (leave "latest" to use latest release)', trim: true)
 	}
         triggers {
                 cron('H H(4-16) * * 4')
@@ -26,7 +26,7 @@ pipeline {
                         ).trim()}"""
                 SOFTWARESTRING = "<<TORVERSION>>"
                 TARGETVERSION = "${SOFTWAREVERSION}"
-                TAGSUFFIX = "-root"
+                TAGSUFFIX = ""
                 NOLATEST = "false"
         }
         stages {
