@@ -3,7 +3,7 @@ pipeline {
                 label 'arm32v6 && Docker'
         }
 	parameters {
-		string(name: 'OVERRIDE', defaultValue: 'latest', description: 'Version to use (leave "latest" to use latest release)', trim: true)
+		string(name: 'OVERRIDE', defaultValue: '0.4.3.5', description: 'Version to use (leave "latest" to use latest release)', trim: true)
 	}
         triggers {
                 cron('H H(4-16) * * 4')
@@ -20,14 +20,14 @@ pipeline {
                 NAME = "rpi-tor-relay"
                 SECONDARYREGISTRY = "nexus.intrepid.local:4000"
                 SECONDARYNAME = "${NAME}"
-//                BASETYPE = ""
-//                BASECONTAINER = "-empty-"
                 SOFTWAREVERSION = """${sh(
                         returnStdout: true,
                         script: '/bin/bash ./get_version.sh'
                         ).trim()}"""
                 SOFTWARESTRING = "<<TORVERSION>>"
                 TARGETVERSION = "${SOFTWAREVERSION}"
+                TAGSUFFIX = "-root"
+                NOLATEST = "false"
         }
         stages {
                 stage('Build') {
