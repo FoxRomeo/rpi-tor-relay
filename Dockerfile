@@ -9,7 +9,7 @@ RUN passwd -l root ; \
       -S -g 9001 \
       tor && \
     adduser \
-      -S -H -D \
+      -S -D \
       -h /home/tor \
       -s /bin/bash \
       -u 9001 \
