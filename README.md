@@ -12,7 +12,8 @@ BREAKING CHANGE: with new version 0.4.3.6 the runser is not root anymore (for se
 start with:
 docker run -d --restart=unless-stopped --name rpi-tor-relay -v {local path}/torrc:/etc/tor/torrc:ro -v {local path}/fingerprint:/var/lib/tor/fingerprint:ro -v {local path}/keys:/var/lib/tor/keys:rw -p 9030:9030 -p 9001:9001 intrepidde/rpi-tor-relay
 
-based on arm32v6/alpine:latest
+based on arm32v6/alpine:3.12 (due to alpine:>=3.13 time64 requirements)
+~~based on arm32v6/alpine:latest~~
 
 https://www.intrepid.de/index.php/projects/git-docker/17-intrepidde-rpi-tor-relay
 
