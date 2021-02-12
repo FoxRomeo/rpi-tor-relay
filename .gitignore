@@ -3,3 +3,7 @@ keys/*
 torrc
 build.sh
 Build.sh
+Jenkinsfile
+action.sh
+get_version.sh
+run_version.sh
