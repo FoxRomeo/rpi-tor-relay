@@ -4,7 +4,9 @@ MAINTAINER docker@intrepid.de
 
 ENV TORVERSION=<<TORVERSION>>
 
+COPY health.sh /
 RUN passwd -l root ; \
+    chmod 755 /health.sh && \
     apk add --update --upgrade --no-cache bash alpine-sdk libevent libevent-dev zlib zlib-dev openssl openssl-dev libgcc && \
     addgroup \
       -S -g 9001 \
@@ -36,5 +38,5 @@ EXPOSE 9030
 USER tor
 CMD ["/usr/bin/tor", "--defaults-torrc", "/etc/tor/torrc", "--hush"]
 
-
+# HEALTHCHECK --start-period=3m --interval=3m --timeout=10s CMD /health.sh
 
