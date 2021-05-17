@@ -3,13 +3,13 @@
 EXITCODE=0
 
 
-if [[ -z "${SOCKS_PORT}" ]]; then
- RI_PORT=9030
+if [[ -z "${DIR_PORT}" ]]; then
+ DIR_PORT=9030
 fi
-if netstat -an | grep "LISTEN" | grep "${SOCKS_PORT}" > /dev/null; then
-    echo "listening for connections on port ${SOCKS_PORT}. HEALTHY"
+if netstat -an | grep "LISTEN" | grep "${DIR_PORT}" > /dev/null; then
+    echo "listening for connections on port ${DIR_PORT}. HEALTHY"
 else
-    echo "not listening for connections on port ${SOCKS_PORT}. UNHEALTHY"
+    echo "not listening for connections on port ${DIR_PORT}. UNHEALTHY"
     EXITCODE=1
 fi
 

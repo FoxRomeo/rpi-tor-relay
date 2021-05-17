@@ -38,5 +38,5 @@ EXPOSE 9030
 USER tor
 CMD ["/usr/bin/tor", "--defaults-torrc", "/etc/tor/torrc", "--hush"]
 
-# HEALTHCHECK --start-period=3m --interval=3m --timeout=10s CMD /health.sh
+HEALTHCHECK --start-period=3m --interval=3m --timeout=10s CMD /health.sh
 
