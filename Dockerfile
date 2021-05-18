@@ -3,6 +3,7 @@ FROM arm32v6/alpine:3.12
 MAINTAINER docker@intrepid.de
 
 ENV TORVERSION=<<TORVERSION>>
+ENV MAKELIMIT=1
 
 COPY health.sh /
 RUN passwd -l root ; \
@@ -25,7 +26,7 @@ RUN passwd -l root ; \
     tar xzvf tor-${TORVERSION}.tar.gz && \
     cd tor-${TORVERSION} && \
     ./configure --prefix=/usr --sysconfdir=/etc --with-tor-user=tor --with-tor-group=tor && \
-    make install && \
+    make -j ${MAKELIMIT) install && \
     mkdir -p /var/lib/tor && \
     chown tor:tor /var/lib/tor -R && \
     cd / && \
