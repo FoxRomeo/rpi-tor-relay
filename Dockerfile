@@ -26,7 +26,7 @@ RUN passwd -l root ; \
     tar xzvf tor-${TORVERSION}.tar.gz && \
     cd tor-${TORVERSION} && \
     ./configure --prefix=/usr --sysconfdir=/etc --with-tor-user=tor --with-tor-group=tor && \
-    make -j ${MAKELIMIT) install && \
+    make -j ${MAKELIMIT} install && \
     mkdir -p /var/lib/tor && \
     chown tor:tor /var/lib/tor -R && \
     cd / && \
