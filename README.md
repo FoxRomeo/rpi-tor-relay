@@ -15,7 +15,9 @@ Define environment variables OR_PORT and DIR_PORT if you are NOT using default p
 start with:
 ```docker run -d --restart=unless-stopped --name rpi-tor-relay -v {local path}/torrc:/etc/tor/torrc:ro -v {local path}/fingerprint:/var/lib/tor/fingerprint:ro -v {local path}/keys:/var/lib/tor/keys:rw -p 9030:9030 -p 9001:9001 intrepidde/rpi-tor-relay```
 or
-```docker run -d --restart=unless-stopped --name rpi-tor-relay -v {local path}/torrc:/etc/tor/torrc:ro -v {local path}/fingerprint:/var/lib/tor/fingerprint:ro -v {local path}/keys:/var/lib/tor/keys:rw -p 9030:9030 -p 9001:9001 -e OR_PORT=9001 -e SOCKS_PORT=9030 intrepidde/rpi-tor-relay```
+```docker run -d --restart=unless-stopped --name rpi-tor-relay -v {local path}/torrc:/etc/tor/torrc:ro -v {local path}/fingerprint:/var/lib/tor/fingerprint:ro -v {local path}/keys:/var/lib/tor/keys:rw -p 9050:9050 -p 9030:9030 -p 9001:9001 -e OR_PORT=9001 -e DIR_PORT=9030 -e SOCKS_PORT=9050 intrepidde/rpi-tor-relay```
+
+health.sh checks for OR_PORT and optional for DIR_PORT and SOCKS_PORT if set
 
 based on arm32v6/alpine:3.12 (due to alpine:>=3.13 time64 requirements)
 ~~based on arm32v6/alpine:latest~~

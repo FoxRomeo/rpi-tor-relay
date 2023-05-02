@@ -35,6 +35,7 @@ RUN passwd -l root ; \
 
 EXPOSE 9001
 EXPOSE 9030
+EXPOSE 9050
 
 USER tor
 CMD ["/usr/bin/tor", "--defaults-torrc", "/etc/tor/torrc", "--hush"]
