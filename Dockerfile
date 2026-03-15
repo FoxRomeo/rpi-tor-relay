@@ -1,6 +1,6 @@
-FROM arm32v6/alpine:3.12
-#FROM arm32v6/alpine:latest
-MAINTAINER docker@intrepid.de
+FROM arm32v6/alpine:3.23
+
+LABEL maintainer="docker@intrepid.de"
 
 ENV TORVERSION=<<TORVERSION>>
 ENV MAKELIMIT=1
